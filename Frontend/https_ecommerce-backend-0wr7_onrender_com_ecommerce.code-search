@@ -4,114 +4,107 @@
 
 23 results - 13 files
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\AllAgents.jsx:
+Dashboard\Frontend\src\Components\AllAgents.jsx:
    9      // Fetch re api for all agents
-  10:     axios.get('${process.env.BACKEND_PORT}/agent')
+  10:     axios.get('https://ecommerce-wnup.onrender.com/agent')
   11        .then((response) => {
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\AllProducts.jsx:
+Dashboard\Frontend\src\Components\AllProducts.jsx:
   16      // get re products
-  17:     axios.get('${process.env.BACKEND_PORT}/product')
+  17:     axios.get('https://ecommerce-wnup.onrender.com/product')
   18        .then((response) => {
 
   31      // delete re product by id
-  32:     axios.delete(`${process.env.BACKEND_PORT}/product/products/${productId}`)
+  32:     axios.delete(`https://ecommerce-wnup.onrender.com/product/products/${productId}`)
   33        .then(() => {
 
   53      // update re product by id
-  54:     axios.put(`${process.env.BACKEND_PORT}/product/products/${updateProduct._id}`, updateProduct)
+  54:     axios.put(`https://ecommerce-wnup.onrender.com/product/products/${updateProduct._id}`, updateProduct)
   55        .then(() => {
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\AllUsers.jsx:
+Dashboard\Frontend\src\Components\AllUsers.jsx:
   11        try {
-  12:         const response = await axios.get('${process.env.BACKEND_PORT}/user'); // Make sure the URL is correct
+  12:         const response = await axios.get('https://ecommerce-wnup.onrender.com/user'); // Make sure the URL is correct
   13          setUsers(response.data.users);
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\MainDashboardLogin.jsx:
+Dashboard\Frontend\src\Components\MainDashboardLogin.jsx:
   31        const response = await axios.post(
-  32:         "${process.env.BACKEND_PORT}/agent/login",
+  32:         "https://ecommerce-wnup.onrender.com/agent/login",
   33          {
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\ManagerLogin.jsx:
+Dashboard\Frontend\src\Components\ManagerLogin.jsx:
   39        const response = await axios.post(
-  40:         "${process.env.BACKEND_PORT}/manager/login",
+  40:         "https://ecommerce-wnup.onrender.com/manager/login",
   41          {
 
   63        const response = await axios.post(
-  64:         "${process.env.BACKEND_PORT}/agent/signup",
+  64:         "https://ecommerce-wnup.onrender.com/agent/signup",
   65          {
 
-EcommerceSpectastyle\Dashboard\Frontend\src\Components\Products.jsx:
+Dashboard\Frontend\src\Components\Products.jsx:
   35        const response = await axios.post(
-  36:         "${process.env.BACKEND_PORT}/product/products",
+  36:         "https://ecommerce-wnup.onrender.com/product/products",
   37          formData
 
-EcommerceSpectastyle\Frontend\src\Components\AddReview.jsx:
+Frontend\src\Components\AddReview.jsx:
   16        .post(
-  17:         `${process.env.BACKEND_PORT}/product/products/${productId}/reviews/${userId}`,
+  17:         `https://ecommerce-wnup.onrender.com/product/products/${productId}/reviews/${userId}`,
   18          { reviewText },
 
-EcommerceSpectastyle\Frontend\src\Components\ProductDetail.jsx:
-  29        .get(
-  30        .get(
-  31:         `${process.env.BACKEND_PORT}/product/products/${productId}`
+Frontend\src\Components\ProductDetail.jsx:
+  33        .get(
+  34:         `https://ecommerce-wnup.onrender.com/product/products/${productId}`
+  35        )
 
-  31        )
-  32        )
+  56          .post(
+  57:           `https://ecommerce-wnup.onrender.com/product/addProductToCart/${userId}`,
+  58            { productId: product._id }
 
-  54          .post(
-  55          .post(
-  56:           `${process.env.BACKEND_PORT}/product/addProductToCart/${userId}`,
-  56            { productId: product._id }
-  57            { productId: product._id }
-
-EcommerceSpectastyle\Frontend\src\Pages\Cart.jsx:
+Frontend\src\Pages\Cart.jsx:
   29  
-  30:     const apiUrl = `${process.env.BACKEND_PORT}/product/shopping-cart/${userId}`;
+  30:     const apiUrl = `https://ecommerce-wnup.onrender.com/product/shopping-cart/${userId}`;
   31  
 
   57  
-  58:     const apiUrl = `${process.env.BACKEND_PORT}/product/shopping-cart/${userId}/${itemId}`;
+  58:     const apiUrl = `https://ecommerce-wnup.onrender.com/product/shopping-cart/${userId}/${itemId}`;
   59  
 
-EcommerceSpectastyle\Frontend\src\Pages\ConformOrder.jsx:
+Frontend\src\Pages\ConformOrder.jsx:
   21      try {
-  22:       const apiUrl = `${process.env.BACKEND_PORT}/user-address/getAddresses/${userId}`;
+  22:       const apiUrl = `https://ecommerce-wnup.onrender.com/user-address/getAddresses/${userId}`;
   23        const response = await axios.get(apiUrl);
 
   48  
-  49:     const apiUrl = `${process.env.BACKEND_PORT}/product/shopping-cart/${userId}`;
+  49:     const apiUrl = `https://ecommerce-wnup.onrender.com/product/shopping-cart/${userId}`;
   50  
 
-EcommerceSpectastyle\Frontend\src\Pages\PlaceOrder.jsx:
+Frontend\src\Pages\PlaceOrder.jsx:
    59      try {
-   60:       const apiUrl = `${process.env.BACKEND_PORT}/user-address/addAddress/${userId}`;
+   60:       const apiUrl = `https://ecommerce-wnup.onrender.com/user-address/addAddress/${userId}`;
    61        const response = await axios.post(apiUrl, formData);
 
   102        try {
-  103:         const apiUrl = `${process.env.BACKEND_PORT}/user-address/updateAddress/${userId}/${selectedAddressId}`;
+  103:         const apiUrl = `https://ecommerce-wnup.onrender.com/user-address/updateAddress/${userId}/${selectedAddressId}`;
   104          const response = await axios.put(apiUrl, updatedFormData);
 
   131      try {
-  132:       const apiUrl = `${process.env.BACKEND_PORT}/user-address/deleteAddress/${userId}/${addressId}`;
+  132:       const apiUrl = `https://ecommerce-wnup.onrender.com/user-address/deleteAddress/${userId}/${addressId}`;
   133        const response = await axios.delete(apiUrl);
 
   156      try {
-  157:       const apiUrl = `${process.env.BACKEND_PORT}/user-address/getAddresses/${userId}`;
+  157:       const apiUrl = `https://ecommerce-wnup.onrender.com/user-address/getAddresses/${userId}`;
   158        const response = await axios.get(apiUrl);
 
-EcommerceSpectastyle\Frontend\src\Pages\Product.jsx:
-  15      axios
+Frontend\src\Pages\Product.jsx:
   16      axios
-  17:       .get("${process.env.BACKEND_PORT}/product")
-  17        .then((response) => {
+  17:       .get("https://ecommerce-wnup.onrender.com/product")
   18        .then((response) => {
 
-EcommerceSpectastyle\Frontend\src\Pages\Profile.jsx:
-   61          const response = await fetch(
-   62:           "${process.env.BACKEND_PORT}/user/login",
-   63            {
+Frontend\src\Pages\Profile.jsx:
+   60          const response = await fetch(
+   61:           "https://ecommerce-wnup.onrender.com/user/login",
+   62            {
 
-  114          const response = await fetch(
-  115:           "${process.env.BACKEND_PORT}/user/signup",
-  116            {
+  115          const response = await fetch(
+  116:           "https://ecommerce-wnup.onrender.com/user/signup",
+  117            {
